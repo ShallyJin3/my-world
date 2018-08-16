@@ -1,0 +1,33 @@
+package class9;
+
+import java.util.Scanner;
+
+public class T2333333 {
+	public static void main(String[] args) {
+		/**
+		 * 插入歌曲名称，保持顺序输入
+		 */
+		System.out.print("插入前的数组为：");
+		String[] song = { "Island", "Ocean", "Pretty", "sun" };
+		System.out.print("/n请输入新的歌曲名称：");
+		Scanner input = new Scanner(System.in);
+		String name = input.next();
+		// 创建一个新的数组
+		String[] arr = new String[song.length + 1];
+		// 插入到原数组中，找到插入位置的下标
+		int index = song.length;
+		for (int i = 0; i < arr.length; i++) {
+			if (song[i].equalsIgnoreCase(name)) {
+				index = i;
+				break;
+			}
+			// index之前的内容不变
+			for (int j = 0; j < index; j++) {
+				arr[i] = song[i];
+			}
+			// index处的地方,将元素进行替换
+			arr[index]=name;
+
+		}
+	}
+}
